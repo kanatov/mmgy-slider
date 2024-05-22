@@ -1,5 +1,7 @@
 # mmgy-slider
 
+[Preview](https://kanatov.github.io/mmgy-slider/)
+
 1. Started-build
 
 2. Semantic HTML layout implemented:
