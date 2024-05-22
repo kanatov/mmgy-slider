@@ -16,7 +16,16 @@
 - Shadows and style values taken from Figma mockups.
 - Slide 2: Added shadow under the title text.
 - Slide 3: Adjusted background to bottom.
+- All states compared to the original figma mockup to make closest positioning/sizing. 
 
-4. SwiperJS added and all the slides are visible now.
+![Untitled-ezgif com-video-to-gif-converter(1)](https://github.com/kanatov/mmgy-slider/assets/11691309/d79c2974-a6b8-48cf-9ec8-c91ed2bc0679)
 
-I added slight fade effect for logo and pagination crumbs on the small screen heigh so they didn't overlap the popup.
+4. Added carousel functionality
+
+- SwiperJS added and all the slides are visible now.
+- Added slight fade effect for logo and pagination crumbs on the small screen heigh so they didn't overlap the popup.
+
+5. Media optimisation
+
+- Compressed images to webp using squoosh.app.
+- Cover of slide 2 replaced to the background image.
