@@ -143,9 +143,9 @@ h2 {
     top: 50%;
     left: 50%;
     transform: translateX(-50%) translateY(-50%);
-    width: 50rem;
+    width: 51rem;
     height: 28.625rem;
-    padding: 4rem;
+    padding: 4rem 3rem;
     box-sizing: border-box;
     z-index: 3;
     backdrop-filter: blur(1rem);
@@ -244,7 +244,7 @@ h2 {
 
 .pagination {
     position: absolute;
-    bottom: 1.5rem;
+    bottom: 1rem !important;
     display: flex;
     justify-content: center;
     align-items: center;
@@ -255,16 +255,20 @@ h2 {
 }
 
 .swiper-pagination-bullet {
-    width: .5rem;
-    height: .5rem;
+    width: 0.9rem;
+    height: 0.9rem;
     background-color: #fff;
-    opacity: .5;
+    opacity: .3;
+}
+
+.swiper-pagination-bullet-active {
+    opacity: 1;
 }
 
 @media screen and (max-height: 600px) {
 
     .info-state #logo,
-    .pagination {
+    .info-state .pagination {
         opacity: 0;
     }
 }

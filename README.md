@@ -16,3 +16,7 @@
 - Shadows and style values taken from Figma mockups.
 - Slide 2: Added shadow under the title text.
 - Slide 3: Adjusted background to bottom.
+
+4. SwiperJS added and all the slides are visible now.
+
+I added slight fade effect for logo and pagination crumbs on the small screen heigh so they didn't overlap the popup.
