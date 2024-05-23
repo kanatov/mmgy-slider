@@ -41,11 +41,11 @@
 
 ### The Video Container Structure and States
 
-To automatically enable control for each video player on the page, you can use the controlVideo function.
-- Wrap the `<video>` element and controls in a container with the class name `.video-player`.
-- Pass every SwiperJS slider `id` to the `controlVideo` function so it finds all the player containers inside each slider.
+To automatically enable control for each video player on the page, you can use the VideoController.
+- Wrap the HTML `<video>` element and controls in a container with the class name `.video-player`.
+- Pass every SwiperJS slider `instance` and `id` to the `controlVideo` function so it finds all the player containers inside each slider.
 ```javascript
-controlVideo([{ id: '#slider', instance: slider }]);
+const videoController = new VideoController([{ id: '#slider', instance: slider }]);
 ```
 - Play and Pause buttons should have `play` and `pause` style classes respectively.
 ```html

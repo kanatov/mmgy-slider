@@ -39,13 +39,38 @@ function infoState(sliderID) {
 }
 infoState('slider');
 
-// Control video with custom buttons and sliders events
-function setPlayerControls(videoWrapper, slider) {
-    const video = videoWrapper.querySelector('video');
-    const btnPlay = videoWrapper.querySelector('.play');
-    const btnPause = videoWrapper.querySelector('.pause');
 
-    const playbackCallback = () => {
+// Controlling video playback and enables dragging
+class VideoController {
+    constructor(sliders) {
+        this.sliders = sliders;
+        this.currentWrapper = null;
+        this.startX = undefined;
+        this.startY = undefined;
+        this.controlVideo();
+    }
+
+    mouseUpCallback = (event) => {
+        const delta = 6;
+        const video = this.currentWrapper.querySelector('video');
+        const diffX = Math.abs(event.pageX - this.startX);
+        const diffY = Math.abs(event.pageY - this.startY);
+
+        if (diffX < delta && diffY < delta) {
+            this.playbackToggle(this.currentWrapper, video);
+        }
+        this.currentWrapper.classList.remove('disable-input');
+        window.removeEventListener('mouseup', this.mouseUpCallback);
+    }
+
+    mouseDownCallback(event, videoWrapper) {
+        this.startX = event.pageX;
+        this.startY = event.pageY;
+        this.setCurrentWrapper(videoWrapper);
+        window.addEventListener('mouseup', this.mouseUpCallback);
+    }
+
+    playbackToggle(videoWrapper, video) {
         if (video.paused) {
             video.play();
             videoWrapper.classList.remove('paused');
@@ -55,34 +80,46 @@ function setPlayerControls(videoWrapper, slider) {
             videoWrapper.classList.remove('playback');
             videoWrapper.classList.add('paused');
         }
-    };
-    btnPlay.addEventListener('click', playbackCallback);
-    btnPause.addEventListener('click', playbackCallback);
-
-    slider.on('slideChange', () => {
-        video.pause();
-        videoWrapper.classList.remove('disable-input');
-        videoWrapper.classList.remove('playback');
-        videoWrapper.classList.remove('paused');
-    });
-}
-
-function controlVideo(sliders) {
-    if (!sliders || !sliders.length) {
-        console.error('No sliders provided');
-        return;
     }
 
-    sliders.forEach((slider) => {
-        const sliderElement = document.querySelector(slider.id);
-        if (!sliderElement) {
-            console.error(`Slider element not found for ID: ${slider.id}`);
+    setCurrentWrapper(videoWrapper) {
+        this.currentWrapper = videoWrapper;
+        this.currentWrapper.classList.add('disable-input');
+    }
+
+    setPlayerControls(videoWrapper, slider) {
+        const video = videoWrapper.querySelector('video');
+        const btnPlay = videoWrapper.querySelector('.play');
+        const btnPause = videoWrapper.querySelector('.pause');
+
+        video.addEventListener('mousedown', (event) => this.mouseDownCallback(event, videoWrapper));
+        btnPlay.addEventListener('click', () => this.playbackToggle(videoWrapper, video));
+        btnPause.addEventListener('click', () => this.playbackToggle(videoWrapper, video));
+
+        slider.on('slideChange', () => {
+            video.pause();
+            videoWrapper.classList.remove('playback');
+            videoWrapper.classList.remove('paused');
+        });
+
+    }
+
+    controlVideo() {
+        if (!this.sliders || !this.sliders.length) {
+            console.error('No sliders provided');
             return;
         }
 
-        const videoPlayers = sliderElement.querySelectorAll('.video-player');
-        videoPlayers.forEach((videoWrapper) => setPlayerControls(videoWrapper, slider.instance));
-    });
-}
+        this.sliders.forEach((slider) => {
+            const sliderElement = document.querySelector(slider.id);
+            if (!sliderElement) {
+                console.error(`Slider element not found for ID: ${slider.id}`);
+                return;
+            }
 
-controlVideo([{ id: '#slider', instance: slider }]);
+            const videoPlayers = sliderElement.querySelectorAll('.video-player');
+            videoPlayers.forEach((videoWrapper) => this.setPlayerControls(videoWrapper, slider.instance));
+        });
+    }
+}
+const videoController = new VideoController([{ id: '#slider', instance: slider }]);
