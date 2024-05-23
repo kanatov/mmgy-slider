@@ -151,6 +151,7 @@ h2 {
     box-sizing: border-box;
     z-index: 3;
     backdrop-filter: blur(1rem);
+    -webkit-backdrop-filter: blur(1rem);
     border-radius: 2.1rem;
     border: 1px solid #939393;
 }
@@ -311,7 +312,7 @@ video {
     opacity: 1;
 }
 
-@media screen and (max-height: 600px) {
+@media screen and (max-height: 650px) {
 
     .info-state #logo,
     .info-state .pagination {
