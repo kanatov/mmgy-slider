@@ -89,12 +89,7 @@ class VideoController {
 
     setPlayerControls(videoWrapper, slider) {
         const video = videoWrapper.querySelector('video');
-        const btnPlay = videoWrapper.querySelector('.play');
-        const btnPause = videoWrapper.querySelector('.pause');
-
         video.addEventListener('mousedown', (event) => this.mouseDownCallback(event, videoWrapper));
-        btnPlay.addEventListener('click', () => this.playbackToggle(videoWrapper, video));
-        btnPause.addEventListener('click', () => this.playbackToggle(videoWrapper, video));
 
         slider.on('slideChange', () => {
             video.pause();

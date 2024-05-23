@@ -203,6 +203,7 @@ video {
     transform: translateX(-50%) translateY(-50%);
     cursor: pointer;
     width: 6.8rem;
+    pointer-events: none;
 }
 
 .pause,
@@ -214,6 +215,7 @@ video {
     left: auto;
     cursor: pointer;
     width: 2.5rem;
+    pointer-events: none;
 }
 
 .pause,

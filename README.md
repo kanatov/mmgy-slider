@@ -47,11 +47,6 @@ To automatically enable control for each video player on the page, you can use t
 ```javascript
 const videoController = new VideoController([{ id: '#slider', instance: slider }]);
 ```
-- Play and Pause buttons should have `play` and `pause` style classes respectively.
-```html
-<img class="play" src="play.svg">
-<img class="pause" src="pause.svg">
-```
 The player has 3 states defined by extra CSS classes applied to the wrapper container:
 - Cover with play button (no class).
 - Playing (`playback` class).
