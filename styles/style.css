@@ -11,7 +11,7 @@ section,
 span {
     margin: 0;
     padding: 0;
-    color: inherit;
+    color: white;
 }
 
 a {
@@ -37,7 +37,6 @@ body,
 html {
     font-size: 16px;
     font-family: Helvetica, Arial, sans-serif;
-    color: white;
     background-color: black;
 }
 
@@ -68,7 +67,7 @@ h2 {
 .tagline {
     text-shadow: 0 .4rem .6rem rgba(0, 0, 0, 0.35);
     font-size: 1.2rem;
-    margin-top: 1.75rem;
+    margin-top: 1.3rem;
     margin-bottom: 2.25rem;
     opacity: 0;
     transition: opacity 1s ease-out;
@@ -119,7 +118,7 @@ h2 {
     justify-content: center;
     align-items: center;
     flex-direction: column;
-    padding-top: 2.75rem;
+    padding-top: 2.5rem;
 }
 
 .info-state .cover {
