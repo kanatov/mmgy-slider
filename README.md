@@ -57,3 +57,7 @@ To prevent SwiperJS drag conflict while dragging the video, the player input is 
 ### 7. The web page was checked in the modern desktop versions of Firefox, Chrome and Safari.
 
 No mobile device resolutions were checked.
+
+### 8. Bonus part
+
+- Custom pagination bullets look and ainmation.

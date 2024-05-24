@@ -7,7 +7,8 @@ div,
 img,
 figcaption,
 video,
-section {
+section,
+span {
     margin: 0;
     padding: 0;
 }
@@ -294,22 +295,24 @@ video {
     bottom: 1rem !important;
     display: flex;
     justify-content: center;
-    align-items: center;
-    gap: .5rem;
+    align-items: end;
+    gap: .25rem;
     z-index: 1;
     opacity: 1;
-    transition: opacity 200ms ease-in-out;
 }
 
 .swiper-pagination-bullet {
-    width: 0.9rem;
-    height: 0.9rem;
-    background-color: white;
-    opacity: .3;
+    width: 1.62rem;
+    height: 0.25rem;
+    background-color: #D9D9D9;
+    transition: height 300ms cubic-bezier(.3, 0, .5, 1.5);
+    border-radius: 0;
+    opacity: 1;
+    margin: 0 !important;
 }
 
 .swiper-pagination-bullet-active {
-    opacity: 1;
+    height: 0.75rem;
 }
 
 @media screen and (max-height: 650px) {
