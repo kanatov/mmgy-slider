@@ -54,6 +54,27 @@ h2 {
     text-shadow: 0 .25rem 2rem rgba(0, 0, 0, 0.25);
     text-transform: uppercase;
     line-height: 86%;
+    transform: scale(1.15);
+    opacity: 0;
+    transition: transform 600ms cubic-bezier(0, 0, .5, 1.1), opacity 400ms ease-out;
+}
+
+.swiper-slide-active h2 {
+    transform: none;
+    opacity: 1;
+}
+
+.tagline {
+    text-shadow: 0 .4rem .6rem rgba(0, 0, 0, 0.35);
+    font-size: 1.2rem;
+    margin-top: 1.75rem;
+    margin-bottom: 2.25rem;
+    opacity: 0;
+    transition: opacity 1s ease-out;
+}
+
+.swiper-slide-active .tagline {
+    opacity: 1;
 }
 
 #logo {
@@ -117,13 +138,6 @@ h2 {
     transform: scale(1);
 }
 
-.tagline {
-    text-shadow: 0 .4rem .6rem rgba(0, 0, 0, 0.35);
-    font-size: 1.2rem;
-    margin-top: 1.75rem;
-    margin-bottom: 2.25rem;
-}
-
 .button {
     display: flex;
     justify-content: center;
@@ -138,27 +152,27 @@ h2 {
 }
 
 .slide1 .button {
-    background: top center / auto 200% linear-gradient(to bottom, #D5CEBD, #AFA48D);
+    background: top center / auto 150% linear-gradient(to bottom, #D5CEBD, #AFA48D);
 }
 
 .slide1 .info .button {
-    background: top center / auto 200% linear-gradient(to bottom, #B6BA10, #8F9308);
+    background: top center / auto 150% linear-gradient(to bottom, #B6BA10, #8F9308);
 }
 
 .slide2 .button {
-    background: top center / auto 200% linear-gradient(to bottom, #FCA776, #D97C4F);
+    background: top center / auto 150% linear-gradient(to bottom, #FCA776, #D97C4F);
 }
 
 .slide2 .info .button {
-    background: top center / auto 200% linear-gradient(to bottom, #E5603A, #B53D1F);
+    background: top center / auto 150% linear-gradient(to bottom, #E5603A, #B53D1F);
 }
 
 .slide3 .button {
-    background: top center / auto 200% linear-gradient(to bottom, #D6CFA3, #B3A97A);
+    background: top center / auto 150% linear-gradient(to bottom, #D6CFA3, #B3A97A);
 }
 
 .slide3 .info .button {
-    background: top center / auto 200% linear-gradient(to bottom, #DAC95F, #B3A03B);
+    background: top center / auto 150% linear-gradient(to bottom, #DAC95F, #B3A03B);
 }
 
 
@@ -179,9 +193,9 @@ h2 {
 .info .button:hover,
 .prev:hover img,
 .next:hover img {
-    transform: translateY(-.15rem);
+    transform: translateY(-.15rem) scale(1.01);
     background-position: bottom center;
-    filter: drop-shadow(0 2px 0 rgba(0, 0, 0, 0.3));
+    filter: drop-shadow(0 2px 1px rgba(0, 0, 0, 0.3));
 }
 
 .info {
@@ -203,7 +217,7 @@ h2 {
     -webkit-backdrop-filter: blur(1rem);
     border-radius: 2.1rem;
     border: 1px solid #939393;
-    transition: transform 400ms cubic-bezier(.3, 0, .4, 1), opacity 200ms ease-in-out;
+    transition: transform 200ms cubic-bezier(.3, 0, .4, 1), opacity 200ms ease-in-out;
     pointer-events: none;
 }
 
@@ -220,7 +234,8 @@ h2 {
 
 .video-player:hover {
     transform: translateY(-.12rem) scale(1.01);
-    filter: drop-shadow(0 .25rem 1px rgba(0, 0, 0, 0.3));
+    filter: drop-shadow(0 2px 1px rgba(0, 0, 0, 0.3));
+
 }
 
 .paused.video-player:hover,
@@ -340,7 +355,7 @@ video {
     width: 1.62rem;
     height: 0.25rem;
     background-color: #D9D9D9;
-    transition: height 300ms cubic-bezier(.3, 0, .5, 1.5);
+    transition: height 350ms cubic-bezier(.3, 0, .5, 1.5);
     border-radius: 0;
     opacity: 1;
     margin: 0 !important;

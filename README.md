@@ -64,3 +64,4 @@ No mobile device resolutions were checked.
 - Buttons gradients and interaction animations.
 - Popup reveal animation.
 - Video interaction animation.
+– Titles animation.
