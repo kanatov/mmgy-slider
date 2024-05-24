@@ -95,6 +95,8 @@ h2 {
     top: 50%;
     transform: translateY(-50%);
     z-index: 1;
+    opacity: 1;
+    transition: opacity 200ms ease-in-out;
 }
 
 .prev {
@@ -369,6 +371,13 @@ video {
 
     .info-state #logo,
     .info-state .pagination {
+        opacity: 0;
+    }
+}
+
+@media screen and (max-width: 1052px) {
+
+    .slider-nav {
         opacity: 0;
     }
 }

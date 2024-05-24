@@ -23,7 +23,7 @@
 ### 4. Added Carousel Functionality
 
 - SwiperJS added, and all slides are now visible.
-- Added slight fade effect for logo and pagination crumbs on small screen height to prevent overlap with the popup.
+- Added slight fade effect for logo, pagination and navigation arrows on small screen size to prevent overlap with the content.
 
 ### 5. Media Optimization
 
@@ -64,4 +64,4 @@ No mobile device resolutions were checked.
 - Buttons gradients and interaction animations.
 - Popup reveal animation.
 - Video interaction animation.
-– Titles animation.
+- Titles animation.
