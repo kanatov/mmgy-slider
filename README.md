@@ -65,3 +65,4 @@ No mobile device resolutions were checked.
 - Popup reveal animation.
 - Video interaction animation.
 - Titles animation.
+- Minimal support of small screens.
