@@ -61,3 +61,5 @@ No mobile device resolutions were checked.
 ### 8. Bonus part
 
 - Custom pagination bullets look and ainmation.
+- Buttons gradients and interaction ainmations.
+- Popup reveal animation.
