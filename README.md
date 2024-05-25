@@ -1,17 +1,18 @@
 # mmgy-slider
 
+<img width="480" alt="ProGL" src="https://github.com/kanatov/mmgy-slider/assets/11691309/0d7245c7-de6f-497c-9f34-fd924c1562e2">
+<img width="480" alt="ProGL" src="https://github.com/kanatov/mmgy-slider/assets/11691309/4dc1319f-3d62-4923-94cf-065cabf473ac">
+
 # [Preview](https://kanatov.github.io/mmgy-slider/)
 
-### 1. Started-build
-
-### 2. Semantic HTML layout implemented
+### 1. Semantic HTML layout implemented
 
 - Placed the logo outside the slider's content. It’s not clear from the prototype if it belongs to the content group, but it makes more sense as an overlay.
 - Kept the title text in Title Case and used CSS to capitalize it.
 - Navigation arrows are not included in the sources, so I copied them from Figma.
 - According to the mockups, the popup does not overlay the title state of the slide but represents a different state. There is no way for the user to "close" it or return to the title state. Implemented as shown in the mockups; will try to improve in a later version. The state switch solved by adding class "info-state" to the "swiper-wrapper" container, so the state affects all the slides.
 
-### 3. CSS Implemented
+### 2. CSS Implemented
 
 - Shadows and style values taken from Figma mockups.
 - Slide 2: Added shadow under the title text.
@@ -20,17 +21,17 @@
 - All states compared to the original Figma mockup to ensure closest positioning and sizing.
 <img alt="mockup to HTML comparison" src="https://github.com/kanatov/mmgy-slider/assets/11691309/d79c2974-a6b8-48cf-9ec8-c91ed2bc0679">
 
-### 4. Added Carousel Functionality
+### 3. Added Carousel Functionality
 
 - SwiperJS added, and all slides are now visible.
 - Added slight fade effect for logo, pagination and navigation arrows on small screen size to prevent overlap with the content.
 
-### 5. Media Optimization
+### 4. Media Optimization
 
 - Compressed images to WebP using squoosh.app.
 - Cover of Slide 2 replaced with a background image.
 
-### 6. Video Player Implemented
+### 5. Video Player Implemented
 
 - Added script for custom controls. The script supports multiple video players on the page with the following structure.
 - No pause button was provided in the mockups. Assumed it was meant to be used when the video is paused.
@@ -54,11 +55,9 @@ The player has 3 states defined by extra CSS classes applied to the wrapper cont
 
 To prevent SwiperJS drag conflict while dragging the video, the player input is temporarily disabled while dragged. To disable the player, the `disable-input` class is assigned to it.
 
-### 7. The web page was checked in the modern desktop versions of Firefox, Chrome and Safari.
+### 6. The web page was checked in the modern desktop versions of Firefox, Chrome and Safari.
 
-No mobile device resolutions were checked.
-
-### 8. Bonus part
+### 7. Bonus part
 
 - Custom pagination bullets look and animation.
 - Buttons gradients and interaction animations.
